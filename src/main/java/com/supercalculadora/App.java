@@ -147,9 +147,14 @@ public class App
                         ruffini = new Ruffini(grados);
                         
                         resultados = ruffini.getResultados();
+                        
+                        for(int i = 0; i<resultados.size(); i++){
+                            System.out.println(resultados.get(i) + "/" + i );
+                        }   
                         break;
 
                 }
+
                 if(opcion==6){
                     resultados.forEach(System.out::println);
                 }else{
