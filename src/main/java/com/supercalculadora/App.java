@@ -148,18 +148,18 @@ public class App
                         
                         resultados = ruffini.getResultados();
                         
+                        System.out.println("Los resultados son:");
                         for(int i = 0; i<resultados.size(); i++){
-                            System.out.println(resultados.get(i) + "/" + i );
+                            System.out.println(i+1 + "º: " + resultados.get(i));
                         }   
                         break;
 
                 }
 
-                if(opcion==6){
-                    resultados.forEach(System.out::println);
-                }else{
+                if(opcion!=6 && opcion!=7){
                     System.out.println(resultado);
                 }
+
             }while(opcion!=7);
         }
         

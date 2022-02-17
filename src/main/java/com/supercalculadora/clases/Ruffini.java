@@ -11,8 +11,11 @@ public class Ruffini {
 
     public Ruffini(ArrayList<Integer> g){
         this.grados = g;
-        posiblesRaices();
-        resolver();
+        for(int i = 0; i<2 && grados.size()>=2; i++){
+            posiblesRaices();
+            resolver();
+        }
+        
 
     }
 
@@ -24,33 +27,28 @@ public class Ruffini {
                 posibles.add(-i);
             }
         }
-
-
     }
 
     private void resolver(){
 
         int num;
-
-        for(int k = 0; k<this.grados.size(); k++){
-            this.prueba.add(this.grados.get(k)); 
-            System.out.println(this.prueba.get(k) + " " + k);
-        }
-
+        System.out.println("hey");
         for(int j = 0; j<this.posibles.size(); j++){
 
+            prueba.clear();
+
+            for(int k = 0; k<this.grados.size(); k++){
+                this.prueba.add(this.grados.get(k)); 
+            }
             
 
             for(int i = 1; i<this.prueba.size(); i++){
-                System.out.println(this.prueba.get(i-1) + " * " + this.posibles.get(j) + " + " + this.prueba.get(i));
                 num = (this.prueba.get(i-1) * this.posibles.get(j)) + this.prueba.get(i); 
-                System.out.println(num);
                 prueba.set(i, num);
             }
 
 
             if(this.prueba.get(this.prueba.size()-1) == 0){
-                System.out.println("k");
 
                 for(int x = 0; x<this.grados.size(); x++){
                     this.grados.set(x,this.prueba.get(x));
@@ -58,12 +56,6 @@ public class Ruffini {
 
                 this.grados.remove(this.grados.size()-1);
                 this.resultados.add(this.posibles.get(j));
-            }else{
-                
-                for(int k = 0; k<this.grados.size(); k++){
-                    this.prueba.add(this.grados.get(k)); 
-                    System.out.println(this.prueba.get(k) + " " + k);
-                }
             }
    
         }
