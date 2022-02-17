@@ -30,10 +30,10 @@ public class App
             int opcion1 = 0;
             int resultado = 0;
             Operaciones operacion;
-            // Poligonos poligonos;
-            // Pitagoras pitagoras;
-            // Ecuacion1 ecuacion1;
-            // Ecuacion2 ecuacion2;
+            Poligonos poligonos;
+            Pitagoras pitagoras;
+            Ecuacion1 ecuacion1;
+            Ecuacion2 ecuacion2;
             Ruffini ruffini;
             ArrayList<Integer> resultados = new ArrayList<Integer>();
             
@@ -72,68 +72,68 @@ public class App
                         resultado = operacion.getResult();
                         break;
 
-                    // case 2:
+                    case 2:
 
-                    //     System.out.println("Introduce el numero de lados");
-                    //     int lados = s.nextInt();
-                    //     System.out.println("Introduce la longitud del lado");
-                    //     int longitud = s.nextInt();
-                    //     System.out.println("Introduce la apotema");
-                    //     int apotema = s.nextInt();
-                    //     poligonos.Poligonos(lados, longitud, apotema);
-                    //     resultado = poligonos.getResult();
-                    //     break;
+                        System.out.println("Introduce el numero de lados");
+                        int lados = s.nextInt();
+                        System.out.println("Introduce la longitud del lado");
+                        int longitud = s.nextInt();
+                        System.out.println("Introduce la apotema");
+                        int apotema = s.nextInt();
+                        poligonos.Poligonos(lados, longitud, apotema);
+                        resultado = poligonos.getResult();
+                        break;
 
-                    // case 3:
-                        
-                    //     System.out.println("¿Cual es el lado que falta?");
-                    //     System.out.println("1. cateto");
-                    //     System.out.println("2. hipotenusa");
-                    //     opcion1 = s.nextInt();
-                    //     switch(opcion1){
-                    //         case 1:
-                    //             System.out.println("Introduce la hipotenusa y el cateto");
-                    //             break;
-                    //         case 2:
-                    //             System.out.println("Introduce los catetos");
-                    //             break;
-                    //     }
+                    case 3:
+                     
+                        System.out.println("¿Cual es el lado que falta?");
+                        System.out.println("1. cateto");
+                        System.out.println("2. hipotenusa");
+                        opcion1 = s.nextInt();
+                        switch(opcion1){
+                            case 1:
+                                System.out.println("Introduce la hipotenusa y el cateto");
+                                break;
+                            case 2:
+                                System.out.println("Introduce los catetos");
+                                break;
+                        }
 
-                    //     int lado1 = s.nextInt();
-                    //     int lado2 = s.nextInt();
+                        int lado1 = s.nextInt();
+                        int lado2 = s.nextInt();
 
-                    //     pitagoras.Pitagoras(lado1, lado2, opcion1);
+                        pitagoras.Pitagoras(lado1, lado2, opcion1);
 
-                    //     break;
+                        break;
 
-                    // case 4:
-                    //     System.out.println("Introduce el coeficiente de x");
-                    //     int x = s.nextInt();
-                    //      while(x==0){
-                    //            System.out.println("El coeficiente de x no puede ser 0")
-                    //        }
-                    //     System.out.println("Introduce el termino independiente");
-                    //     int inde = s.nextInt();
+                    case 4:
+                        System.out.println("Introduce el coeficiente de x");
+                        int x = s.nextInt();
+                         while(x==0){
+                               System.out.println("El coeficiente de x no puede ser 0")
+                           }
+                        System.out.println("Introduce el termino independiente");
+                        int inde = s.nextInt();
 
-                    //     ecuacion1 = new Ecuacion1(x,inde);
+                        ecuacion1 = new Ecuacion1(x,inde);
 
-                    //     resultado = ecuacion1.getResult();
+                        resultado = ecuacion1.getResult();
 
-                    //     break;
+                        break;
 
-                    // case 5:
-                    //     System.out.println("Introduce el coeficiente de x2");
-                    //     int x2 = s.nextInt();
-                    //     System.out.println("Introduce el coeficiente de x");
-                    //     int x1 = s.nextInt();
-                    //     System.out.println("Introduce el termino independiente");
-                    //     int termino = s.nextInt();
+                    case 5:
+                        System.out.println("Introduce el coeficiente de x2");
+                        int x2 = s.nextInt();
+                        System.out.println("Introduce el coeficiente de x");
+                        int x1 = s.nextInt();
+                        System.out.println("Introduce el termino independiente");
+                        int termino = s.nextInt();
 
-                    //     ecuacion2.Ecuacion2(x2, x1, inde);
+                        ecuacion2.Ecuacion2(x2, x1, inde);
 
-                    //     resultado = ecuacion2.getResult();
+                        resultado = ecuacion2.getResult();
 
-                    //     break;
+                        break;
                     case 6:
                         System.out.println("Introduce el grado de la ecuacion");
                         int tamano = s.nextInt();
