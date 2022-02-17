@@ -1,4 +1,4 @@
-package com.supercalculadora.clases;
+package com.clases;
 
 public class Operaciones {
     private int num1;
