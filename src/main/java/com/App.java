@@ -107,6 +107,8 @@ public class App
 
                         pitagoras = new Pitagoras(lado1, lado2, opcion1);
 
+                        resultado = pitagoras.calcularPitagoras();
+
                         break;
 
                     case 4:
