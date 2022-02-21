@@ -114,15 +114,16 @@ public class App
                     case 4:
                         System.out.println("Introduce el coeficiente de x");
                         int x = s.nextInt();
-                         while(x==0){
-                               System.out.println("El coeficiente de x no puede ser 0");
-                           }
+                        //  while(x==0){
+                        //        System.out.println("El coeficiente de x no puede ser 0");
+                        //        x = s.nextInt();
+                        // }
                         System.out.println("Introduce el termino independiente");
                         int inde = s.nextInt();
 
                         ecuacion1 = new Ecuacion1();
 
-                        resultado = ecuacion1.calcular(x,inde);
+                        resultado = ecuacion1.calcular(inde,x);
 
                         break;
 
