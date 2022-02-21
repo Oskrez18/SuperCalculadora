@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 import com.clases.Ecuacion1;
 import com.clases.Ecuacion2;
+import com.clases.Pitagoras;
+import com.clases.Poligonos;
 import com.clases.Operaciones;
 import com.clases.Ruffini;
 /**
@@ -30,7 +32,8 @@ public class App
         try (Scanner s = new Scanner(System.in)) {
             int opcion = 0;
             int opcion1 = 0;
-            int resultado = 0;
+            double resultado = 0;
+            double[] resulta = new double[2];
             Operaciones operacion;
             Poligonos poligonos;
             Pitagoras pitagoras;
@@ -79,11 +82,9 @@ public class App
                         System.out.println("Introduce el numero de lados");
                         int lados = s.nextInt();
                         System.out.println("Introduce la longitud del lado");
-                        int longitud = s.nextInt();
-                        System.out.println("Introduce la apotema");
-                        int apotema = s.nextInt();
-                        poligonos.Poligonos(lados, longitud, apotema);
-                        resultado = poligonos.getResult();
+                        float longitud = s.nextFloat();
+                        poligonos = new Poligonos(lados, longitud);
+                        resultado = poligonos.calcularArea();
                         break;
 
                     case 3:
@@ -104,7 +105,7 @@ public class App
                         int lado1 = s.nextInt();
                         int lado2 = s.nextInt();
 
-                        pitagoras.Pitagoras(lado1, lado2, opcion1);
+                        pitagoras = new Pitagoras(lado1, lado2, opcion1);
 
                         break;
 
@@ -112,14 +113,14 @@ public class App
                         System.out.println("Introduce el coeficiente de x");
                         int x = s.nextInt();
                          while(x==0){
-                               System.out.println("El coeficiente de x no puede ser 0")
+                               System.out.println("El coeficiente de x no puede ser 0");
                            }
                         System.out.println("Introduce el termino independiente");
                         int inde = s.nextInt();
 
-                        ecuacion1 = new Ecuacion1(x,inde);
+                        ecuacion1 = new Ecuacion1();
 
-                        resultado = ecuacion1.getResult();
+                        resultado = ecuacion1.calcular(x,inde);
 
                         break;
 
@@ -131,9 +132,14 @@ public class App
                         System.out.println("Introduce el termino independiente");
                         int termino = s.nextInt();
 
-                        ecuacion2.Ecuacion2(x2, x1, inde);
+                        ecuacion2 = new Ecuacion2();
 
-                        resultado = ecuacion2.getResult();
+                        resulta = ecuacion2.calcular(x2, x1, termino);
+                        
+                        System.out.println("Los resultados son:");
+                        for(int i = 0; i<2; i++){
+                            System.out.println(i+1 + "º: " + resulta[i]);
+                        }
 
                         break;
                     case 6:
@@ -158,7 +164,7 @@ public class App
 
                 }
 
-                if(opcion!=6 && opcion!=7){
+                if(opcion<5){
                     System.out.println(resultado);
                 }
 

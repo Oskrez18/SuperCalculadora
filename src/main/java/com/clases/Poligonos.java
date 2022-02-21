@@ -1,26 +1,21 @@
-package com.supercalculadora.clases;
+package com.clases;
 
-import java.text.DecimalFormat;
-
-
-class poligonos {
+public class Poligonos {
     
     int numLados;    
     float lado;
     float area;
     float apotema;
     float alfa; 
-    String resultado;
+    double resultado;
 
-    public poligonos(int numLados, float lado){
+    public Poligonos(int numLados, float lado){
         this.numLados = numLados;
         this.lado = lado;
     }
 
-    public String calcularArea(){
+    public double calcularArea(){
         
-        DecimalFormat df = new DecimalFormat("#.00");
-
         if(this.numLados == 3){
             this.area = (float) (Math.pow(this.lado , 2) * (Math.sqrt(3) / 4));
         }else{
@@ -29,7 +24,7 @@ class poligonos {
             this.area = (this.numLados * this.lado * this.apotema) / 2;
         }
         
-        this.resultado = "El area es: " + df.format(this.area);
+        this.resultado = this.area;
         
         return this.resultado;
     }

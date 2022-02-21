@@ -68,7 +68,7 @@ public class Operaciones {
         this.result = n+n2;
     }
 
-    public int getResult(){
+    public double getResult(){
         return this.result;
     }
 
