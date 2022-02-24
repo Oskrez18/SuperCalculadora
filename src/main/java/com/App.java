@@ -34,7 +34,7 @@ public class App
             int opcion1 = 0;
             double resultado = 0;
             double[] resulta = new double[2];
-            Operaciones operacion;
+            Operaciones operacion = new Operaciones();
             Poligonos poligonos;
             Pitagoras pitagoras;
             Ecuacion1 ecuacion1;
@@ -72,9 +72,7 @@ public class App
                         System.out.println("Introduce el segundo numero");
                         int num2 = s.nextInt();
 
-                        operacion = new Operaciones(num1,num2,opcion1);
-
-                        resultado = operacion.getResult();
+                        resultado = operacion.getResult(num1,num2,opcion1);
                         break;
 
                     case 2:

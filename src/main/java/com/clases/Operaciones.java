@@ -3,17 +3,48 @@ package com.clases;
 public class Operaciones {
     private int num1;
     private int num2;
-    private int result;
+    private double result;
+    public int op;
 
     public Operaciones(){
         
     }
 
-    public Operaciones(int n, int n2, int op){
+    private void suma(int n, int n2){
+        this.result = n+n2;
+    }
+
+    private void resta(int n, int n2){
+        this.result = n-n2;
+    }
+
+    private void multiplicacion(int n, int n2){
+        this.result = n*n2;
+    }
+
+    private void division(int n, int n2){
+        this.result = n/n2;
+    }
+
+    private void potencia(int n, int n2){
+        this.result = Math.pow(n, n2);
+    }
+
+    private void raiz(int n, int n2){
+        this.result = Math.pow(n,(1.0/n2));
+    }
+
+    private void logaritmo(int n, int n2){
+        this.result = (Math.log10(n) / Math.log10(n2));
+    }
+
+    public double getResult(int n, int n2, int op){
+
         this.num1 = n;
         this.num2 = n2;
+        this.op = op;
 
-        switch(op){
+        switch(this.op){
             
             case 1:
                 suma(this.num1,this.num2);
@@ -38,37 +69,6 @@ public class Operaciones {
                 break;
 
         }
-    }
-
-    private void suma(int n, int n2){
-        this.result = n+n2;
-    }
-
-    private void resta(int n, int n2){
-        this.result = n-n2;
-    }
-
-    private void multiplicacion(int n, int n2){
-        this.result = n*n2;
-    }
-
-    private void division(int n, int n2){
-        this.result = n/n2;
-    }
-
-    private void potencia(int n, int n2){
-        this.result = n/n2;
-    }
-
-    private void raiz(int n, int n2){
-        this.result = n+n2;
-    }
-
-    private void logaritmo(int n, int n2){
-        this.result = n+n2;
-    }
-
-    public double getResult(){
         return this.result;
     }
 
