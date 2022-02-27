@@ -3,12 +3,9 @@ package com;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import com.clases.Ecuacion1;
-import com.clases.Ecuacion2;
-import com.clases.Pitagoras;
-import com.clases.Poligonos;
-import com.clases.Operaciones;
-import com.clases.Ruffini;
+import com.clases.*;
+
+
 /**
  * Hello world!
  *
