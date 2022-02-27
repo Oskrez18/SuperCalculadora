@@ -7,6 +7,7 @@ import com.clases.Operaciones;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
 
 public class OperacionesTest {
 
@@ -46,6 +47,18 @@ public class OperacionesTest {
     }
 
     @Test
+    void testExpectedException() {
+
+        ArithmeticException thrown = Assertions.assertThrows(ArithmeticException.class, () -> {
+        
+        operaciones.getResult(2, 0, 4);
+        
+        }, "Se espera NumberFormatException");
+
+        Assertions.assertEquals("/ by zero", thrown.getMessage());
+    }
+
+    @Test
     @DisplayName("Potencia")
     void Potencia() {
     assertEquals(9.0, operaciones.getResult(3, 2, 5), "Los resultados de una potencia");
@@ -56,14 +69,36 @@ public class OperacionesTest {
     @DisplayName("Raiz")
     void Raiz() {
     assertEquals(4.0, operaciones.getResult(16, 2, 6), "Los resultados de una raiz");
-
     }
 
     @Test
-    @DisplayName("Suma")
+    @DisplayName("Raiz indice par y numero negativo")
+    void RaizN() {
+        assertEquals(Double.parseDouble("NaN"), operaciones.getResult(-16, 2, 6), "Los resultados de una raiz");
+    }
+
+    @Test
+    @DisplayName("Logaritmo")
     void Logaritmo() {
     assertEquals(5.0, operaciones.getResult(32, 2, 7), "Los resultados de un logaritmo");
+    }
 
+    @Test
+    @DisplayName("Logaritmo baseN")
+    void BaseN() {
+    assertEquals(Double.parseDouble("NaN"), operaciones.getResult(32, -2, 7), "Resultado de un logaritmo de base negativa");
+    }
+
+    @Test
+    @DisplayName("Logaritmo numeroN")
+    void NumeroN() {
+    assertEquals(Double.parseDouble("NaN"), operaciones.getResult(-32, 2, 7), "Resultado de un logaritmo de un numero negativo");
+    }
+
+    @Test
+    @DisplayName("Logaritmo ambosN")
+    void AmbosN() {
+    assertEquals(Double.parseDouble("NaN"), operaciones.getResult(-32, -2, 7), "Resultado de un logaritmo de los dos negativo");
     }
     
 }

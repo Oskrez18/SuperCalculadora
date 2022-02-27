@@ -11,6 +11,11 @@ public class Ruffini {
 
     public Ruffini(ArrayList<Integer> g){
         this.grados = g;
+
+        if(this.grados.get(this.grados.size()-1) == 0){
+            this.grados.remove(this.grados.size()-1);
+        }
+        
         for(int i = 0; i<2 && grados.size()>=2; i++){
             posiblesRaices();
             resolver();
