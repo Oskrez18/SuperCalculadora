@@ -21,7 +21,6 @@ public class Ruffini {
             resolver();
         }
         
-
     }
 
     private void posiblesRaices(){
