@@ -16,17 +16,20 @@ public class Poligonos {
 
     public double calcularArea(){
         
-        if(this.numLados == 3){
-            this.area = (float) (Math.pow(this.lado , 2) * (Math.sqrt(3) / 4));
-        }else{
-            this.alfa = 360 / this.numLados;
-            this.apotema = (float) ((this.lado / 2) / Math.tan(this.alfa / 2));
-            this.area = (this.numLados * this.lado * this.apotema) / 2;
-        }
+        if(this.numLados < 3 || this.lado <= 0){
+            this.resultado = Double.parseDouble("NaN");
+       }else{   
+            if(this.numLados == 3){
+                this.area = (float) (Math.pow(this.lado , 2) * (Math.sqrt(3) / 4));
+            }else if(this.numLados > 3){
+                this.alfa = (float) ((360 / this.numLados) / 2.0);
+                this.apotema = (float) ((this.lado) / (2 * Math.tan(Math.toRadians(this.alfa))));
+                this.area = (this.numLados * this.lado * this.apotema) / 2;
+            }
+            this.resultado = Math.round(this.area * 100.0)/100.0;
+       }    
         
-        this.resultado = this.area;
-        
-        return this.resultado;
+        return this.resultado; 
     }
     
         
