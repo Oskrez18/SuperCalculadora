@@ -71,3 +71,4 @@ public class Ruffini {
     public ArrayList<Integer> getResultados(){
         return this.resultados;
     }
+}
