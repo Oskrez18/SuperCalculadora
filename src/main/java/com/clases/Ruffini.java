@@ -13,6 +13,7 @@ public class Ruffini {
         this.grados = g;
 
         if(this.grados.get(this.grados.size()-1) == 0){
+            this.resultados.add(0);
             this.grados.remove(this.grados.size()-1);
         }
         
@@ -21,6 +22,7 @@ public class Ruffini {
             resolver();
         }
         
+
     }
 
     private void posiblesRaices(){
@@ -69,5 +71,3 @@ public class Ruffini {
     public ArrayList<Integer> getResultados(){
         return this.resultados;
     }
-
-}

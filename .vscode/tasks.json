@@ -16,9 +16,9 @@
             "group": "test"
         },
         {
-            "label": "compile",
-            "type": "shell",
-            "command": "mvn -B test",
+            "label":"compile",
+            "type":"shell",
+            "command":"mvn -B compile",
             "group": "build"
         }
     ]
