@@ -25,18 +25,18 @@ public class Ecuacion2 {
     public double[] calcular(int num01, int num02, int num03) {
         double[] result = new double[2];
 
-        if (Math.sqrt(Math.pow(num02, 2)) > 0) {
+        if (Math.sqrt(Math.pow(num02, 2)-4*num01*num03) > 0) {
             result[0] = ((-num02) + Math.sqrt(Math.pow(num02, 2) - (4*num01*num03))) / (2 * num01);
             result[1] = ((-num02) - Math.sqrt(Math.pow(num02, 2) - (4*num01*num03))) / (2 * num01);
         } else if (num02 == 0 && num03 == 0) {
             result[0] = 0;
-            result[1] = 1;
+            result[1] = 0;
         }  else if (num03 == 0) {
             result[0] = 0;
             result[1] = -num02/num01;
         } else if (num02 == 0) {
             result[0] = (Math.sqrt(-num03 / num01));
-            result[0] = -(Math.sqrt(-num03 / num01));
+            result[1] = -(Math.sqrt(-num03 / num01));
         }
         
         return result;
